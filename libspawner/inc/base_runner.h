@@ -18,8 +18,8 @@ class base_runner {
 protected:
     typedef std::list<std::pair<std::string, std::string>> env_vars_list_t;
     std::map<std_stream_type, multipipe_ptr> streams;
-    bool running = false;
-    bool running_async = false;
+    volatile bool running = false;
+    volatile bool running_async = false;
     report_class report;
     options_class options;
     volatile process_status_t process_status = process_not_started;
